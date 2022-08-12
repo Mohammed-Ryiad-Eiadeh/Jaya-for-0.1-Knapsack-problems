@@ -11,6 +11,7 @@ binary one. Repair method used to fix the infeasible solutions. Fitness function
 used to evaluate each solution. The performance of IDJaya is evaluated over a 
 set of benchmark knapsack problems, and the results showed that IDJaya can 
 be an efficient alternative approach for solving various 0-1 knapsack problems. 
+
 Keywords: 0-1 knapsack problem; discreet Jaya algorithm; mutation operator; 
 opposition-based learning; OBL; transfer functions; binary optimisation 
 problem. 
