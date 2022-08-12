@@ -1,5 +1,3 @@
-# Jaya-for-0.1-Knapsack-problems
-The usage of Jaya optimization algorithm with opposition based learning, four V-transfer functions, mutation operator, and repair mechanism to solve various 0.1 knapsack problems 
 Abstract: 0-1 knapsack problem is one of the most common combinational 
 optimisation problems, which intends toward maximising the profits of a 
 selected subset of items with considering not to exceed a certain capacity. This 
