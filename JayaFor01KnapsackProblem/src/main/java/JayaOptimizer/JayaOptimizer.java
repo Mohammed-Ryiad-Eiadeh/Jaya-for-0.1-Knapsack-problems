@@ -34,13 +34,7 @@ public class JayaOptimizer {
      * @param worstsolutionindex refers to the id of the worst current solution
      * @param maxiteration refers to the allowable number of generation
      */
-    public JayaOptimizer(KnapsackData benchmark,
-                         double[][] population,
-                         TFUN TransferFunction,
-                         boolean ActivateMutation,
-                         int bestsolutionindex,
-                         int worstsolutionindex,
-                         int maxiteration) {
+    public JayaOptimizer(KnapsackData benchmark, double[][] population, TFUN TransferFunction, boolean ActivateMutation, int bestsolutionindex, int worstsolutionindex, int maxiteration) {
 
         Solutions = new double[population.length][population[0].length];
         IntStream.range(0, Solutions.length).
