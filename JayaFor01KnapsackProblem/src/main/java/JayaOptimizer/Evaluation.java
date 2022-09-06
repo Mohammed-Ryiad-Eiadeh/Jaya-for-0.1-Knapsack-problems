@@ -168,9 +168,10 @@ public class Evaluation {
      * @return the id of the best current solution
      */
     protected int GetBestSolutionId() {
+        double best = BestSolutionFitness();
         int index = 0;
         for (int item = 0; item < FitnessForIndex.length; item++) {
-            if (FitnessForIndex[item] == BestSolutionFitness()) {
+            if (FitnessForIndex[item] == best) {
                 index = item;
                 break;
             }
@@ -183,9 +184,10 @@ public class Evaluation {
      * @return the id of the worst current solution
      */
     protected int GetWorstSolutionId() {
+        double worst = WorstSolutionFitness();
         int index = 0;
         for (int item = 0; item < FitnessForIndex.length; item++) {
-            if (FitnessForIndex[item] == WorstSolutionFitness()) {
+            if (FitnessForIndex[item] == worst) {
                 index = item;
                 break;
             }
