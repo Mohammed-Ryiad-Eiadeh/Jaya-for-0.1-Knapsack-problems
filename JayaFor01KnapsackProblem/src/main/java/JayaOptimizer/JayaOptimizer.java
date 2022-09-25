@@ -37,7 +37,7 @@ public class JayaOptimizer {
     public JayaOptimizer(KnapsackData benchmark, double[][] population, TFUN TransferFunction, boolean ActivateMutation, int bestsolutionindex, int worstsolutionindex, int maxiteration) {
 
         Solutions = new double[population.length][population[0].length];
-        IntStream.range(0, Solutions.length).forEach(rows -> arraycopy(population[rows], 0, Solutions[rows], 0, Solutions[0].length));
+        IntStream.range(0, Solutions.length - 1).forEach(rows -> arraycopy(population[rows], 0, Solutions[rows], 0, Solutions[0].length));
         this.TFunction = TransferFunction;
         this.MutationActivation = ActivateMutation;
         this.BestSolutionIndex = bestsolutionindex;
