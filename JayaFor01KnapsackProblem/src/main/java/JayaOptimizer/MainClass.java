@@ -15,10 +15,8 @@ public class MainClass {
         // type the maximum number generations
         var MaxGeneration = 1000;
 
-        //average convergence holder for eight jaya version among 1000 iteration
-        var Convergence = new double[9][MaxGeneration];
-
-        IntStream.range(0, Convergence[0].length).forEach(i -> Convergence[0][i] = KnapsackProblem.GetOptimalProfits());
+        //average convergence holder for eight jaya versions among 1000 iteration and set the optimal value
+        var Convergence = new double[8][MaxGeneration];
 
         System.out.println("Welcome to 0/1 Knapsack Problem via Jaya Algorithm");
 
@@ -46,7 +44,7 @@ public class MainClass {
         JayaOpt.StartOptimization();
         System.out.println("Optimization time is : " + JayaOpt.OptimizationTime());
         JayaOpt.DisplayJayaPerformance();
-        Convergence[1] = JayaOpt.GetConvergence();
+        Convergence[0] = JayaOpt.GetConvergence();
 
         System.out.println(); //new line
 
@@ -62,7 +60,7 @@ public class MainClass {
         JayaOpt.StartOptimization();
         System.out.println("Optimization time is : " + JayaOpt.OptimizationTime());
         JayaOpt.DisplayJayaPerformance();
-        Convergence[2] = JayaOpt.GetConvergence();
+        Convergence[1] = JayaOpt.GetConvergence();
 
         System.out.println(); //new line
 
@@ -78,7 +76,7 @@ public class MainClass {
         JayaOpt.StartOptimization();
         System.out.println("Optimization time is : " + JayaOpt.OptimizationTime());
         JayaOpt.DisplayJayaPerformance();
-        Convergence[3] = JayaOpt.GetConvergence();
+        Convergence[2] = JayaOpt.GetConvergence();
 
         System.out.println(); //new line
 
@@ -94,7 +92,7 @@ public class MainClass {
         JayaOpt.StartOptimization();
         System.out.println("Optimization time is : " + JayaOpt.OptimizationTime());
         JayaOpt.DisplayJayaPerformance();
-        Convergence[4] = JayaOpt.GetConvergence();
+        Convergence[3] = JayaOpt.GetConvergence();
 
         System.out.println(); //new line
 
@@ -110,7 +108,7 @@ public class MainClass {
         JayaOpt.StartOptimization();
         System.out.println("Optimization time is : " + JayaOpt.OptimizationTime());
         JayaOpt.DisplayJayaPerformance();
-        Convergence[5] = JayaOpt.GetConvergence();
+        Convergence[4] = JayaOpt.GetConvergence();
 
         System.out.println(); //new line
 
@@ -126,7 +124,7 @@ public class MainClass {
         JayaOpt.StartOptimization();
         System.out.println("Optimization time is : " + JayaOpt.OptimizationTime());
         JayaOpt.DisplayJayaPerformance();
-        Convergence[6] = JayaOpt.GetConvergence();
+        Convergence[5] = JayaOpt.GetConvergence();
 
         System.out.println(); //new line
 
@@ -142,7 +140,7 @@ public class MainClass {
         JayaOpt.StartOptimization();
         System.out.println("Optimization time is : " + JayaOpt.OptimizationTime());
         JayaOpt.DisplayJayaPerformance();
-        Convergence[7] = JayaOpt.GetConvergence();
+        Convergence[6] = JayaOpt.GetConvergence();
 
         System.out.println(); //new line
 
@@ -158,21 +156,18 @@ public class MainClass {
         JayaOpt.StartOptimization();
         System.out.println("Optimization time is : " + JayaOpt.OptimizationTime());
         JayaOpt.DisplayJayaPerformance();
-        Convergence[8] = JayaOpt.GetConvergence();
+        Convergence[7] = JayaOpt.GetConvergence();
 
-        var LinePlot = new Plot("Iteration", "Average Fitness", 600, 400);
-        LinePlot.DisplayPlot("Optimal Solution",
-                "Jaya-V1",
-                "Jaya-V1 with mutation",
-                "Jaya-V2",
-                "Jaya-V2 with mutation",
-                "Jaya-V3",
-                "Jaya-V3 with mutation",
-                "Jaya-V4",
-                "Jaya-V4 with mutation",
-                Convergence,
+        var LinePlot = new Plot(600, 400);
+        LinePlot.DisplayPlot(new String[] {"Jaya-V1",
+                        "Jaya-V1 with mutation",
+                        "Jaya-V2",
+                        "Jaya-V2 with mutation",
+                        "Jaya-V3",
+                        "Jaya-V3 with mutation",
+                        "Jaya-V4",
+                        "Jaya-V4 with mutation",},
+                KnapsackProblem.GetOptimalProfits(),
                 Convergence);
     }
 }
-
-
