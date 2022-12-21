@@ -22,7 +22,7 @@ public class MainClass {
 
         // generate the initial population with opposition based learning
         var PopulationObj = new Population(KnapsackProblem, 100);
-        var InitialPopulation = PopulationObj.GeneratePopulation().OppositionBasedLearning();
+        var InitialPopulation = PopulationObj.OppositionBasedLearning().GeneratePopulation();
         PopulationObj.DisplayPopulation(InitialPopulation);
 
         // evaluate initial population for convergence purposes
