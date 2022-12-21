@@ -44,14 +44,14 @@ public class Population {
      * this method is used to generate the initial solutions
      * @return the object itself
      */
-    protected Population GeneratePopulation() {
+    protected double[][] GeneratePopulation() {
         PopulationStore = new double[NumSolutions][SolutionLength];
         for (int rows = 0; rows < PopulationStore.length; rows++) {
             for (int cols = 0; cols < PopulationStore[0].length; cols++) {
                 PopulationStore[rows][cols] = new Random().nextInt(2);
             }
         }
-        return this;
+        return PopulationStore;
     }
 
     /**
@@ -70,7 +70,7 @@ public class Population {
      * this method is used to enhance the initial population based on generation solution in the opposite directions
      * @return the enhanced population by OBL
      */
-    protected double[][] OppositionBasedLearning() {
+    protected Population OppositionBasedLearning() {
         Evaluation Evaluator = new Evaluation(Profits);
         double[][] ComplementArray = new double[PopulationStore.length][PopulationStore[0].length];
         for (int i = 0; i < ComplementArray.length; i++) {
@@ -81,6 +81,6 @@ public class Population {
                 arraycopy(ComplementArray[i], 0, PopulationStore[i], 0, ComplementArray[0].length);
             }
         }
-        return PopulationStore;
+        return this;
     }
 }
