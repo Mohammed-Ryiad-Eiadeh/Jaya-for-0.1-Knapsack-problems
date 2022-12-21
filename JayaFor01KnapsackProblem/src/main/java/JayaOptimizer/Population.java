@@ -27,6 +27,7 @@ public class Population {
         this.Profits = Data.GetProfits();
         this.SolutionLength = Profits.length;
         this.NumSolutions = NumberOfSolutions;
+        PopulationStore = new double[NumSolutions][SolutionLength];
     }
 
     /**
@@ -38,6 +39,7 @@ public class Population {
         this.Profits = Data.GetProfits();
         this.SolutionLength = Profits.length;
         this.NumSolutions = 50;
+        PopulationStore = new double[NumSolutions][SolutionLength];
     }
 
     /**
@@ -45,7 +47,6 @@ public class Population {
      * @return the object itself
      */
     protected double[][] GeneratePopulation() {
-        PopulationStore = new double[NumSolutions][SolutionLength];
         for (int rows = 0; rows < PopulationStore.length; rows++) {
             for (int cols = 0; cols < PopulationStore[0].length; cols++) {
                 PopulationStore[rows][cols] = new Random().nextInt(2);
