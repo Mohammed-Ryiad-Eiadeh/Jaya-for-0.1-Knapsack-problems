@@ -62,7 +62,7 @@ public class JayaOptimizer {
                     EvolovedSolution[j] = Mutation(MutationActivation, VTFunctions(TFunction, solution[j]
                             + new Random().nextDouble()
                             * (Solutions[BestSolutionIndex][j] - solution[j])
-                            - new Random().hashCode()
+                            - new Random().nextDouble()
                             * (Solutions[WorstSolutionIndex][j] - solution[j])));
                 }
                 EvolovedSolution = Evaluator.PrepareSolution(EvolovedSolution);
