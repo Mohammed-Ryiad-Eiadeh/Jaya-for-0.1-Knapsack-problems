@@ -10,7 +10,6 @@ import PopulationGenerator.Population;
  * */
 
 public class MainClass {
-
     public static void main(String ...args) {
         // select and fetch dataset based on it's id
         var KnapsackProblem = new KnapsackData(21);
