@@ -15,7 +15,6 @@ import static java.lang.System.arraycopy;
  * */
 
 public class JayaOptimizer {
-
     private final double[][] Solutions;
     private final int MaxIteration;
     private final Evaluation Evaluator;
@@ -25,7 +24,6 @@ public class JayaOptimizer {
     private final boolean MutationActivation;
     private double[] AvgEachIter;
     private int NumOfIterToReachOptimalSolution;
-
     private long StartTime, FinishTime;
 
     /**
@@ -39,7 +37,6 @@ public class JayaOptimizer {
      * @param maxiteration refers to the allowable number of generation
      */
     public JayaOptimizer(KnapsackData benchmark, double[][] population, TFUN TransferFunction, boolean ActivateMutation, int bestsolutionindex, int worstsolutionindex, int maxiteration) {
-
         Solutions = new double[population.length][population[0].length];
         IntStream.range(0, Solutions.length).forEach(rows -> arraycopy(population[rows], 0, Solutions[rows], 0, Solutions[0].length));
         this.TFunction = TransferFunction;
@@ -56,10 +53,8 @@ public class JayaOptimizer {
     public void StartOptimization() {
         boolean flag = true;
         StartTime = System.currentTimeMillis();
-
         double[] EvolvedSolution = new double[Solutions[0].length];
         AvgEachIter = new double[MaxIteration];
-
         for (int iter = 0; iter < MaxIteration; iter++) {
             for (double[] solution : Solutions) {
                 for (int j = 0; j < Solutions[0].length; j++) {
@@ -77,7 +72,6 @@ public class JayaOptimizer {
             Evaluator.SetNextGeneration(Solutions);
             Evaluator.Evaluate();
             BestSolutionIndex = Evaluator.GetBestSolutionId();
-
             if (flag)
             {
                 NumOfIterToReachOptimalSolution = Evaluator.GetRequiredNumberToReachTheBestSolution(Solutions[BestSolutionIndex], iter);
@@ -86,7 +80,6 @@ public class JayaOptimizer {
             }
             WorstSolutionIndex = Evaluator.GetWorstSolutionId();
             AvgEachIter [iter] = Evaluator.GetAvgFitness();
-
             FinishTime = System.currentTimeMillis();
         }
     }
