@@ -22,4 +22,4 @@ Paper DOI: 10.1504/IJMOR.2023.134491
 
 Paper link: https://www.inderscience.com/info/inarticle.php?artid=134491 
 
-Send email to mraleiad@iu.edu for full text.
+Send email to mraleiad@iu.edu or maleiade@purude.edu for full text.
